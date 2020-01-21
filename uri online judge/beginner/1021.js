@@ -1,0 +1,44 @@
+var input = "0.01";
+var lines = input.split('\n');
+
+const monetaryValue = Number(lines.shift());
+
+const banknote100 = Math.floor(monetaryValue / 100);
+let change = monetaryValue % 100;
+const banknote50 = Math.floor(change / 50);
+change %= 50;
+const banknote20 = Math.floor(change / 20);
+change %= 20;
+const banknote10 = Math.floor(change / 10);
+change %= 10;
+const banknote5 = Math.floor(change / 5);
+change %= 5;
+const banknote2 = Math.floor(change / 2);
+change %= 2;
+change *= 100;
+const coin100 = Math.floor(change / 100);
+change %= 100;
+const coin50 = Math.floor(change / 50);
+change %= 50;
+const coin25 = Math.floor(change / 25);
+change %= 25;
+const coin10 = Math.floor(change / 10);
+change %= 10;
+const coin5 = Math.floor(change / 5);
+change %= 5;
+const coin1 = Math.round(change / 1);
+
+console.log('NOTAS:');
+console.log(banknote100 + ' nota(s) de R$ 100,00');
+console.log(banknote50 + ' nota(s) de R$ 50,00');
+console.log(banknote20 + ' nota(s) de R$ 20,00');
+console.log(banknote10 + ' nota(s) de R$ 10,00');
+console.log(banknote5 + ' nota(s) de R$ 5,00');
+console.log(banknote2 + ' nota(s) de R$ 2,00');
+console.log('MOEDAS:');
+console.log(coin100 + ' moeda(s) de R$ 1.00');
+console.log(coin50 + ' moeda(s) de R$ 0.50');
+console.log(coin25 + ' moeda(s) de R$ 0.25');
+console.log(coin10 + ' moeda(s) de R$ 0.10');
+console.log(coin5 + ' moeda(s) de R$ 0.05');
+console.log(coin1 + ' moeda(s) de R$ 0.01');
